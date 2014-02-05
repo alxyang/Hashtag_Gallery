@@ -1,0 +1,24 @@
+
+<div class = "title-text">
+
+  Geisel Library
+
+</div>
+
+
+<div class = "subtitle-text">
+    <p class="lead">
+  University of California San Diego
+</p>
+</div>
+
+<div class = "tagged-images-container ">
+  <div class = "tagged-images-container-position">
+    <% @instagram.each do |instagram| %>
+            <%= link_to image_tag(instagram.images.standard_resolution.url, class: "tagged-images"), instagram.images.standard_resolution.url, class: "test-popup-link" %>    
+    <% end %>
+    <% @nextpage.each do |instagram| %>
+            <%= link_to image_tag(instagram.images.standard_resolution.url, class: "tagged-images"), instagram.images.standard_resolution.url, class: "test-popup-link" %>
+    <% end %>
+  </div>
+</div>
