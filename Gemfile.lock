@@ -120,6 +120,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   instagram
   jquery-rails
+  json
   magnific-popup-rails (~> 0.9.9)
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)

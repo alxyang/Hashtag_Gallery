@@ -7,6 +7,7 @@ gem 'bootstrap-sass'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'json'
 gem 'instagram'
 gem "magnific-popup-rails", "~> 0.9.9"
 
