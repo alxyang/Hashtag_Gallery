@@ -5,8 +5,14 @@ class HomeController < ApplicationController
         #@instagram = Instagram.tag_recent_media("geisel", {:count => 50})
         #@instagram = Instagram.tag_recent_media("geisel", {:count => 50, :max_id => 13872296})
         #@instagram_user = Instagram.tag_recent_media("geisel", {:count => 50, :max_id => 13872296})
-        @instagram = Instagram.tag_recent_media("geisel")
-        @instagram.each do |instagram_pic|
+        @result = []
+        next_id = nil
+        while @result.length < 100
+        instagram = Instagram.tag_recent_media("geisel", max_id: next_id)
+        next_id = instagram.pagination.next_max_id
+        @result.concat(instagram)
+        end
+        @result.each do |instagram_pic|
             @data = JSON.parse(instagram_pic.to_json)
         end
         #new_max_id = @instagram.pagination.next_max_id
