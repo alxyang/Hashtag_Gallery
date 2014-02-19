@@ -16,6 +16,13 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $( ".image-info" ).hover(
+    function() {
+      $( this ).addClass( "display-text" );
+    }, function() {
+      $( this ).removeClass( "display-text" );
+    }
+  );
   $('.test-popup-link').magnificPopup({
     type:'image',
       callbacks: {
@@ -23,13 +30,11 @@ $(document).ready(function() {
       // Function will fire for each target element
       // "item.el" is a target DOM element (if present)
       // "item.src" is a source that you may modify
-      console.log("herp"); 
-      console.log(item.el); // Do whatever you want with "item" object
       }
     },
     gallery: {
     // options for gallery
-    enabled: true
+    enabled: false
     },
     image: {
     markup: '<div class="mfp-figure">'+
@@ -45,9 +50,9 @@ $(document).ready(function() {
 
     //titleSrc: 'title', // Attribute of the target element that contains caption for the slide.
     // Or the function that should return the title. For example:
-    titleSrc: function(item) {
-       return item.el.context + '<small>by Marsel Van Oosten</small>';
-    },
+    //titleSrc: function(item) {
+     //  return item.el.context + '<small>by Marsel Van Oosten</small>';
+    //},
 
     verticalFit: true, // Fits image in area vertically
 
@@ -56,7 +61,7 @@ $(document).ready(function() {
     mainClass: 'mfp-with-zoom', // this class is for CSS animation below
 
   zoom: {
-    enabled: true, // By default it's false, so don't forget to enable it
+    enabled: false, // By default it's false, so don't forget to enable it
 
     duration: 300, // duration of the effect, in milliseconds
     easing: 'ease-in-out', // CSS transition easing function 
@@ -77,4 +82,3 @@ $(document).ready(function() {
 
 });
 
-console.log("derp");
