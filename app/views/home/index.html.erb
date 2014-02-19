@@ -15,16 +15,19 @@
 <div class = "tagged-images-container ">
   <div class = "tagged-images-container-position">
     <% @result.each do |instagram| %>
-    <%#= image_tag instagram.images.standard_resolution.url %>
-            <%= link_to image_tag(instagram.images.standard_resolution.url, class: "tagged-images"), instagram.images.standard_resolution.url, class: "test-popup-link" %>
-            
-            <%#= if instagram.caption != nil
-                  instagram.caption.text
-                end %>
-            <%= instagram.user.username %>
-            <%= instagram.likes %>
-            <%#= image_tag(instagram.images.standard_resolution.url, class: "tagged-images") %>
-        
+      <div class = "image-display">
+        <div class = "overlay">
+          <%= link_to image_tag(instagram.images.standard_resolution.url, class: "tagged-images"), instagram.images.standard_resolution.url, class: "test-popup-link" %>
+            <div class = "image-info">
+              <%= if instagram.caption != nil
+                    instagram.caption.text
+                  end %>
+                  <br/>
+              <%= instagram.user.username %>
+              <%= instagram.likes.count %>
+            </div>
+        </div>
+      </div>
     <% end %>
     <%= @data %>
   </div>

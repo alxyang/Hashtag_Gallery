@@ -13,6 +13,7 @@ body{
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
+  font-size:0; //get rid of white space
 }
 
 /*body { background-image: url("http://farm4.staticflickr.com/3048/2301848062_119c9c66e6_o.jpg");
@@ -23,7 +24,30 @@ width: 100%;
 background-attachment:fixed;
 }
 */
+.image-display{
+display: inline-block;
+width: 20%;
+height: 20%;
+margin: 0 !important;
+}
 
+.image-info{
+position: absolute;
+z-index: 20;
+top: 20%;
+color: red;
+width: 100%;
+height: 100%;
+text-align: center;
+//padding:10px;
+font-size:11px;
+}
+
+.overlay{
+  width: 100%;
+  position: relative;
+  overflow:hidden;
+}
 
 #logo {
   float: left;
@@ -43,16 +67,13 @@ background-attachment:fixed;
 }
 
 .tagged-images{
-  margin-left: -2px;
-  margin-right: -2px;
-  width: 20%;
-  height: 20%;
+width:100%;
 }
 
 .tagged-images-container{
   margin: 0 auto;
   position: relative;
-  width: 100.2%;
+  width: 100%;
 }
 
 .tagged-images-container-position{
