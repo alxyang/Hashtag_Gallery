@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'json'
 gem 'instagram'
 gem "magnific-popup-rails", "~> 0.9.9"
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.

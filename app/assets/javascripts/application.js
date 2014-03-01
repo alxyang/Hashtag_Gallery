@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.infinitescroll
 //= require magnific-popup
 //= require_tree .
 
@@ -80,5 +81,40 @@ $(document).ready(function() {
   });
 
 
+$(window).load(function(){
+$(window).scroll(function(){
+    urlnext = $('.pagination .next_page').attr('href');
+    page = 0;
+    if( urlnext && $(window).scrollTop() > $(document).height() - $(window).height() - 20 ) {
+      // console.log("enter page");
+      // console.log($(window).scrollTop());
+      // console.log($(document).height() + " document");
+      // console.log($(window).height() + " window");
+      // console.log($(document).height() - $(window).height() - 20);
+      // window.location.href = urlnext;
+      $.ajax({
+            url: urlnext,
+            type: 'get',
+            success: function(response) {
+              console.log(response);
+              $(".tagged-images-container-position").append(response);
+              if (response == "") {
+                //stop calling endless scroll
+              }
+            }  
+          });
+    }
+}).scroll();
 });
+
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
+});
+
+});
+
+
 

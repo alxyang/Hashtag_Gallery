@@ -16,8 +16,10 @@ class HomeController < ApplicationController
         #    data = JSON.parse(instagram_pic.to_json)
         #end
 
-        @results = result.paginate(:page => params[:page], :per_page => 13)
-
+        @results = result.paginate(:page => params[:page], :per_page => 15)
+          if request.xhr?
+            render '_photos'
+          end
         #new_max_id = @instagram.pagination.next_max_id
         #@nextpage = Instagram.tag_recent_media("geisel", :max_id => new_max_id ) unless new_max_id.nil?
   end
