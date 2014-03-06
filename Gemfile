@@ -9,8 +9,11 @@ gem 'bootstrap-sass'
 gem 'sqlite3'
 gem 'json'
 gem 'instagram'
-gem "magnific-popup-rails", "~> 0.9.9"
 gem 'will_paginate'
+gem 'jquery-rails'
+gem "colorbox-rails", "~> 0.1.1"
+gem 'fancybox-rails'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,7 +27,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

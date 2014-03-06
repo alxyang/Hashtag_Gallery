@@ -7,7 +7,7 @@ class HomeController < ApplicationController
         #@instagram_user = Instagram.tag_recent_media("geisel", {:count => 50, :max_id => 13872296})
         result = []
         next_id = nil
-        while result.length < 100
+        while result.length < 200
             data = Instagram.tag_recent_media("geisel", max_id: next_id)
             next_id = data.pagination.next_max_id
             result.concat(data)
@@ -16,7 +16,7 @@ class HomeController < ApplicationController
         #    data = JSON.parse(instagram_pic.to_json)
         #end
 
-        @results = result.paginate(:page => params[:page], :per_page => 15)
+        @results = result.paginate(:page => params[:page], :per_page => 40)
           if request.xhr?
             render '_photos'
           end

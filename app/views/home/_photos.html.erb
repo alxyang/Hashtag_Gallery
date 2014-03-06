@@ -1,20 +1,31 @@
-    <% @results.each do |instagram| %>
-      <div class = "image-display">
-        <div class = "overlay">
-          <%= image_tag(instagram.images.standard_resolution.url, class: "tagged-images") %>
-            <%= link_to(instagram.images.standard_resolution.url, class: "test-popup-link") do %>
-            <div class = "image-info">
-              <div class = "image-info-placement">
-                <%= if instagram.caption != nil
-                    instagram.caption.text
-                  end %>
-                  <br/>
-              <strong><%= instagram.user.username %></strong> - 
-              <%= instagram.likes[:count] %> Likes
-              </div>
-            </div>
-            <% end %>
-        </div>
-      </div>
-    <% end %>
-    <%= will_paginate @results %>
+<% @results.each do |instagram| %>
+<% if instagram.caption != nil
+    caption_text = instagram.caption.text
+  end %>
+<% title_text = caption_text.to_s + '<br/>' + '<strong>' + instagram.user.username.to_s + '</strong>'  + ' ' + instagram.likes[:count].to_s + ' Likes' %>
+  <div class = "image-display">
+    <div class = "overlay">
+      <%= link_to image_tag(instagram.images.standard_resolution.url, class: "tagged-images"), instagram.images.standard_resolution.url, :class => "fancybox", :title => title_text %>
+    </div>
+  </div>
+<% end %>
+<%= will_paginate @results %>
+<script> 
+jQuery(function() {
+  $("a.fancybox").fancybox({
+            'transitionIn'      : 'fade',
+            'transitionOut'     : 'fade',
+            'titleFormat'       : function(title) {
+                return '<div class = "fancybox-text">' + title + '</div>';
+            },
+            'onStart'            : function(){$("body").css({'overflow':'hidden'}); }, 
+            'onClosed'            : function(){$("body").css({"overflow":"visible"}); } 
+  });
+
+});
+</script>
+<!-- instagram.caption.text
+instagram.user.username
+instagram.likes[:count]
+
+ -->

@@ -39,8 +39,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    colorbox-rails (0.1.1)
+      jquery-rails
+      rails (>= 3.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
     faraday_middleware (0.9.0)
@@ -58,7 +63,6 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    magnific-popup-rails (0.9.9)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -119,10 +123,11 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
+  colorbox-rails (~> 0.1.1)
+  fancybox-rails
   instagram
   jquery-rails
   json
-  magnific-popup-rails (~> 0.9.9)
   rails
   sass-rails (~> 3.2.3)
   sqlite3
