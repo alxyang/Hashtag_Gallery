@@ -66,7 +66,6 @@ $(window).scroll(function(){
           });
     }
 }).scroll();
-
 jQuery(function() {
   $("a.fancybox").fancybox({
             'transitionIn'      : 'fade',
@@ -78,8 +77,11 @@ jQuery(function() {
               title: {
                 type: 'inside',
                 position: 'bottom'
-              }
-            }        
+              },
+                  overlay: {
+      locked: false
+    }
+            }       
   });
 
 });
