@@ -11,8 +11,7 @@ gem 'json'
 gem 'instagram'
 gem 'will_paginate'
 gem 'jquery-rails'
-gem "colorbox-rails", "~> 0.1.1"
-gem 'fancybox-rails'
+gem 'fancybox2-rails'
 
 
 # Gems used only for assets and not required

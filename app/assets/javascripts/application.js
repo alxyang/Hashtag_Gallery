@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require colorbox-rails
 //= require fancybox
 //= require_tree .
 
@@ -73,10 +72,14 @@ jQuery(function() {
             'transitionIn'      : 'fade',
             'transitionOut'     : 'fade',
             'titleFormat'       : function(title) {
-                return '<div class = "fancybox-text">' + title + '</div>';
+                return title;
             },
-            'onStart'            : function(){$("body").css({'overflow':'hidden'}); }, 
-            'onClosed'            : function(){$("body").css({"overflow":"visible"}); } 
+            helpers : {
+              title: {
+                type: 'inside',
+                position: 'bottom'
+              }
+            }        
   });
 
 });
