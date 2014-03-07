@@ -11,6 +11,7 @@ gem 'instagram'
 gem 'will_paginate'
 gem 'jquery-rails'
 gem 'fancybox2-rails'
+gem 'rails_12factor'
 
 
 # Gems used only for assets and not required
