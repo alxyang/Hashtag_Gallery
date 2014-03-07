@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require fancybox
 //= require_tree .
 
@@ -73,6 +74,12 @@ jQuery(function() {
             'titleFormat'       : function(title) {
                 return title;
             },
+              beforeShow: function(){
+      $("body").css({'overflow-y':'hidden'});
+    },
+    afterClose: function(){
+      $("body").css({'overflow-y':'visible'});
+    },
             helpers : {
               title: {
                 type: 'inside',
@@ -81,7 +88,8 @@ jQuery(function() {
                   overlay: {
       locked: false
     }
-            }       
+            },
+
   });
 
 });

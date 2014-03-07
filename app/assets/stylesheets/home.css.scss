@@ -3,13 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
+.navbar {
+  opacity: 0.96
+}
+
+.navbar li { } 
 .divId{
   padding:100px;
   background:blue;
 }
 
 body{
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .pagination{
@@ -18,11 +23,19 @@ body{
   margin: 0 !important;
   border-radius: none !important;
 }
-.container{
+.home{
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
-  font-size:0; //get rid of white space
+
+}
+
+.home-space{
+    font-size:0; //get rid of white space
+    padding-top: 20px;
+}
+.navbar-inverse{
+
 }
 
 /*body { background-image: url("http://farm4.staticflickr.com/3048/2301848062_119c9c66e6_o.jpg");

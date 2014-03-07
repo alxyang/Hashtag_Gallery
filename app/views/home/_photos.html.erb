@@ -2,7 +2,7 @@
 <% if instagram.caption != nil
     caption_text = instagram.caption.text
   end %>
-<% title_text = caption_text.to_s + '<br/>' + '<strong>' + instagram.user.username.to_s + '</strong>'  + ' ' + instagram.likes[:count].to_s + ' Likes' %>
+<% title_text = caption_text.to_s + '<br/>' + '<strong><a target="_blank" href = "http://instagram.com/' + instagram.user.username.to_s + '">' + instagram.user.username.to_s + '</a></strong>'  + ' ' + instagram.likes[:count].to_s + ' Likes' + '<br/>' + '<a target="_blank" href = "' + instagram.link.to_s + '">' + 'View on Instagram' + '</a>'%>
   <div class = "image-display">
     <div class = "overlay">
       <%= link_to image_tag(instagram.images.standard_resolution.url, class: "tagged-images"), instagram.images.standard_resolution.url, :class => "fancybox", :title => title_text %>
@@ -18,6 +18,12 @@ jQuery(function() {
             'titleFormat'       : function(title) {
                 return title;
             },
+              beforeShow: function(){
+      $("body").css({'overflow-y':'hidden'});
+    },
+    afterClose: function(){
+      $("body").css({'overflow-y':'visible'});
+    },
             helpers : {
               title: {
                 type: 'inside',
@@ -26,7 +32,8 @@ jQuery(function() {
                   overlay: {
       locked: false
     }
-            }       
+            },
+
   });
 
 });

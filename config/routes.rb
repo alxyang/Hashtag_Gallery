@@ -1,4 +1,6 @@
 InstaApp::Application.routes.draw do
+  match '/about',   to: 'home#about'
+  match '/home',    to: 'home#index'
   root :to => "home#index"
 
   # The priority is based upon order of creation:
