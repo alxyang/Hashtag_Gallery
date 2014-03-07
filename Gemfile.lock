@@ -120,14 +120,14 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  coffee-rails (~> 3.2.1)
+  coffee-rails
   fancybox2-rails
   instagram
   jquery-rails
   json
-  pg (= 0.12.2)
+  pg
   rails
-  sass-rails (~> 3.2.3)
+  sass-rails
   sqlite3
-  uglifier (>= 1.0.3)
+  uglifier
   will_paginate
