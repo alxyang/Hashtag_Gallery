@@ -66,6 +66,7 @@ GEM
     mime-types (1.25.1)
     multi_json (1.8.4)
     multipart-post (1.2.0)
+    pg (0.12.2)
     polyglot (0.3.4)
     rack (1.4.5)
     rack-cache (1.2)
@@ -124,6 +125,7 @@ DEPENDENCIES
   instagram
   jquery-rails
   json
+  pg (= 0.12.2)
   rails
   sass-rails (~> 3.2.3)
   sqlite3
