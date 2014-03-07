@@ -6,7 +6,6 @@ gem 'bootstrap-sass'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'json'
 gem 'instagram'
 gem 'will_paginate'
@@ -26,7 +25,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-
+group :development do
+  gem 'sqlite3'
+end
 group :production do
   gem 'pg', '0.12.2'
 end
