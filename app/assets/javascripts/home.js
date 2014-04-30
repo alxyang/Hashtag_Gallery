@@ -49,32 +49,34 @@ $(window).scroll(function(){
           });
     }
 }).scroll();
-jQuery(function() {
-  $("a.fancybox").fancybox({
-            'transitionIn'      : 'fade',
-            'transitionOut'     : 'fade',
-            'titleFormat'       : function(title) {
-                return title;
-            },
-              beforeShow: function(){
-      $("body").css({'overflow-y':'hidden'});
-    },
-    afterClose: function(){
-      $("body").css({'overflow-y':'visible'});
-    },
-            helpers : {
-              title: {
-                type: 'inside',
-                position: 'bottom'
-              },
-                  overlay: {
-      locked: false
-    }
-            },
 
-  });
+// jQuery(function() {
+//   $("a.fancybox").fancybox({
+//             'transitionIn'      : 'fade',
+//             'transitionOut'     : 'fade',
+//             'titleFormat'       : function(title) {
+//                 return title;
+//             },
+//               beforeShow: function(){
+//       $("body").css({'overflow-y':'hidden'});
+//     },
+//     afterClose: function(){
+//       $("body").css({'overflow-y':'visible'});
+//     },
+//             helpers : {
+//               title: {
+//                 type: 'inside',
+//                 position: 'bottom'
+//               },
+//                   overlay: {
+//       locked: false
+//     }
+//             },
 
-});
+//   });
+
+// });
+>>>>>>> cb043ea37f041a10b26c714b0b933207ed6df3de
 
 });
 

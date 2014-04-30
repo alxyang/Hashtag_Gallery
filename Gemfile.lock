@@ -151,7 +151,10 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+<<<<<<< HEAD
   capybara (= 2.1.0)
+=======
+>>>>>>> cb043ea37f041a10b26c714b0b933207ed6df3de
   fancybox2-rails
   instagram
   jquery-rails
